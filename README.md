@@ -43,7 +43,7 @@
 | Channel | CDN zip | Game port | Remotes | Notes |
 | --- | --- | --- | --- | --- |
 | **Official** | [RedSyncLauncher.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher.zip) | **:2077** | Jackie male / Panam female | Stable play path |
-| **BETA** | [RedSyncLauncher-BETA.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher-BETA.zip) | **:2177** | Experimental cutscene V | Build `1.0.8-beta-vsafe` — soft-slide walk OK; crash-free first |
+| **BETA** | [RedSyncLauncher-BETA.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher-BETA.zip) | **:2177** | Experimental cutscene V | Build `1.0.148` — mission-fact relay, late-join snapshots, New Game/resume isolation; crash-free first |
 
 **BETA-first:** every new client/server build ships to BETA and is human-verified before any Official promote.
 
@@ -155,7 +155,7 @@ After script updates, clear `r6/cache` so redscript recompiles.
 
 1. Download a launcher package (or open the page):
    - **Official (stable):** [RedSyncLauncher.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher.zip) → relay **:2077**
-   - **BETA (experimental cutscene V):** [RedSyncLauncher-BETA.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher-BETA.zip) → relay **:2177** · build `1.0.8-beta-vsafe`
+   - **BETA (experimental cutscene V):** [RedSyncLauncher-BETA.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher-BETA.zip) → relay **:2177** · build `1.0.148`
    - Page: [https://xbuniverse.duckdns.org/rs](https://xbuniverse.duckdns.org/rs) · alias `/redsync` · legacy [RedSync.html](https://xbuniverse.duckdns.org/api/media/RedSync.html)
 2. Unzip and run **`RedSyncLauncher.exe`** (no Python required). Confirm `CHANNEL-OFFICIAL.txt` or `CHANNEL-BETA.txt` in the zip.
 3. First run offers **Install / Repair** (RED4ext, redscript, Codeware, RedSync + voice). Clears **`.modded` cache only** — never delete `final.redscripts`.
@@ -328,6 +328,33 @@ Next to `RedSync.Server.exe` (restart after edits):
 ```
 
 File: `admins.json` (or `admins.txt`, one name per line). Names match join name / `username.cfg` (case-insensitive). Reserved admin names can require `username~secret` at join. Process console always has full access.
+
+---
+
+## `12` MISSION SYNC + SAFETY UPDATE
+
+The current integrated RedSync line adds a safer foundation for opt-in co-op mission state while preserving this README's Blackwall presentation and public-only boundary.
+
+### Mission-state foundation
+
+- **Phantom Liberty coverage:** the researched mission arc spans `q301`–`q307`, including the Cynosure bunker and the Songbird/President finale.
+- **Base-game coverage:** the extracted whitelist also covers supported base-game main and side-quest prefixes.
+- **Host authority:** curated quest facts are relayed from the mission host, follower drift is suppressed, and late joiners receive a current fact snapshot.
+- **Scope boundary:** journal state, full mission-NPC AI/workspot behavior, and door/device/dialogue interaction relay remain planned follow-up layers rather than public claims of completion.
+
+### Join and world safety
+
+- New Game is distinguished from Continue even when a username already has saved data.
+- Fresh characters avoid stale resume positions and owned entities; normal reconnects keep validated resume locations.
+- Invalid transforms, ambient NPCs, untyped ownerless entities, and unsupported persistent props are filtered before replication.
+- Vehicle, passenger, elevator, and remote-body handling include additional safety guards.
+
+### Public release policy
+
+- `beta` is the test channel; `main` is the integrated source branch.
+- Server safety tests and protocol mirror checks are part of the maintained validation path.
+- This repository remains documentation-only: no source code, private binaries, configs, credentials, VPS details, or private deployment material are published here.
+- Public release notes: [`CHANGELOG.md`](CHANGELOG.md).
 
 ---
 
