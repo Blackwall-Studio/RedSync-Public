@@ -45,7 +45,7 @@
 | **Official** | [RedSyncLauncher.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher.zip) | **:2077** | Jackie male / Panam female | Stable play path |
 | **BETA** | [RedSyncLauncher-BETA.zip](https://xbuniverse.duckdns.org/api/media/RedSyncLauncher-BETA.zip) | **:2177** | Experimental cutscene V | Build `1.0.148` — mission-fact relay, late-join snapshots, New Game/resume isolation; crash-free first |
 
-**BETA-first:** every new client/server build ships to BETA and is human-verified before any Official promote.
+**BETA-first:*
 
 Download page: [https://xbuniverse.duckdns.org/rs](https://xbuniverse.duckdns.org/rs) · alias `/redsync`.
 
